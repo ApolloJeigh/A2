@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="A2.csproj" />
-  <Project Path="..\A2.Test\A2.Test.csproj" />
+  <Project Path="..\A2.Test\A2.Test.csproj" Id="c056094b-600d-4101-ac5e-b923344715b2" />
+  <Project Path="A2.csproj" Id="fc48e98a-e8c3-4940-981f-4d342a015f34" />
 </Solution>
