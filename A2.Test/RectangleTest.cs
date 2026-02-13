@@ -189,8 +189,8 @@ namespace A2.Test
         public void GetPerimeter_DefaultRectanglePerimeter_Returns60()
         {
             // Arrange
-            Rectangle rectangle = new Rectangle(10, 20);
-            int expected = 60;
+            Rectangle rectangle = new Rectangle();
+            int expected = 4;
 
             //Act
             int actual = rectangle.GetPerimeter();
