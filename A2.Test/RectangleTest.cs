@@ -182,5 +182,82 @@ namespace A2.Test
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+
+
+        [Test]
+        public void GetPerimeter_DefaultRectanglePerimeter_Returns60()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(10, 20);
+            int expected = 60;
+
+            //Act
+            int actual = rectangle.GetPerimeter();
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void GetPerimeter_MinValueLengthAndWidth_Returns4()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(1, 1);
+            int expected = 4;
+            //Act
+            int actual = rectangle.GetPerimeter();
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void GetPerimeter_MaxValue_Returns18000()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(4500, 4500);
+            int expected = 18000;
+            //Act
+            int actual = rectangle.GetPerimeter();
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void GetArea_ReturnCorrectArea()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(10, 20);
+            int expected = 200;
+            // Act
+            int actual = rectangle.GetArea();
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void GetArea_MinValue_Returns1()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(1, 1);
+            int expected = 1;
+            // Act
+            int actual = rectangle.GetArea();
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void GetArea_MaxValue_Returns20250000()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle(4500, 4500);
+            int expected = 20250000;
+
+            // Act
+            int actual = rectangle.GetArea();
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+
+
+        }
     }
 }
