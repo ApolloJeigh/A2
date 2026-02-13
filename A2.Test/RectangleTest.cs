@@ -53,7 +53,7 @@ namespace A2.Test
             Assert.That(actual, Is.EqualTo(expected));
         }
 
-        // GetLength() Tests
+        // GetWidth() Tests
         [Test]
         public void GetWidth_DefaultRectangleWidth_Returns1()
         {
@@ -94,6 +94,92 @@ namespace A2.Test
             int actual = rectangle.GetWidth();
 
             // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        // SetLength()
+        [Test]
+        public void SetLength_MinValue1_Setto1()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 1;
+
+            //Act
+            int actual = rectangle.SetLength(1);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void SetLength_MaxValue4500_Setto4500()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 4500;
+
+            //Act
+            int actual = rectangle.SetLength(4500);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void SetLength_NegativeBelowBoundary_DoesNotUpdate()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 15;
+
+            //Act
+            int actual = rectangle.SetLength(-99);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        // SetWidth()
+        [Test]
+        public void SetWidth_MinValue1_Setto1()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 1;
+
+            //Act
+            int actual = rectangle.SetWidth(1);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void SetWidth_MaxValue4500_Setto4500()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 4500;
+
+            //Act
+            int actual = rectangle.SetWidth(4500);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void SetWidth_MassiveAboveBoundary_DoesNotUpdate()
+        {
+            //Arrange
+            Rectangle rectangle = new Rectangle(15, 16);
+            int expected = 16;
+
+            //Act
+            int actual = rectangle.SetWidth(5095);
+
+            //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
     }
